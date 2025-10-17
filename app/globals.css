@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar-w: 280px;
+  --topbar-h: 64px;
+  --radius: 1rem;
+  --container: 1120px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --sidebar-w: 84px;
+  }
+}
+
+html {
+  font-feature-settings: "tnum" 0;
+}
+
+body {
+  font-feature-settings: "ss01" on;
+  @apply bg-white text-zinc-900 dark:bg-[#0F1218] dark:text-zinc-100;
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *)) {
+  @apply rounded-md bg-zinc-100 px-1.5 py-0.5 text-xs font-medium dark:bg-zinc-800;
+}
+
+a {
+  @apply text-indigo-600 underline-offset-4 transition hover:text-indigo-500 dark:text-indigo-400;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(100 116 139 / 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
